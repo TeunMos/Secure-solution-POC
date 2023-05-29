@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 # generate secret key for flask because it is needed for socketio
 app.config['SECRET_KEY'] = secrets.token_hex(16)
-socketio = SocketIO(app, cors_allowed_origins='http://127.0.0.1:3000')
+socketio = SocketIO(app, cors_allowed_origins='*')
 CORS(app)
 
 
