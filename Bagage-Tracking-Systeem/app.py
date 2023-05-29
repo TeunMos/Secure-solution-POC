@@ -16,12 +16,6 @@ app.config['SECRET_KEY'] = secrets.token_hex(16)
 socketio = SocketIO(app, cors_allowed_origins='*')
 CORS(app)
 
-
-
-@app.route('/')
-def index():
-    return 'Hello World!'
-
 @app.route('/addLuggage', methods=['POST'])
 def addLuggage():
     id = request.form['id']
