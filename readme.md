@@ -41,10 +41,12 @@ Dit is een simpele react app die de status en locatie bagage weergeeft. Het gebr
 - [ ] Rate limiting
 - [ ] separatie door firewalls (netwerk tekening maken en uitleggen)
 
-
-
 maybe:
 - [ ] Authenticatie?
 - [ ] load balancing?
+
+### SQL injection
+> TODO: uitleggen
+
 
 

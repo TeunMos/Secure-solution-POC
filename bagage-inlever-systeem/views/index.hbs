@@ -10,6 +10,21 @@
 
 <body>
     <h1>Bagage Inlever Systeem</h1>
+    <h2>Desk {{desk}}</h2>
+
+
+    <form action="/add-bagage" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Your name" required>
+
+        <label for="flight">Flight:</label>
+        <input type="text" name="flight" id="flight" placeholder="Flight number" required>
+                    
+        <input type="hidden" name="desk" value="{{desk}}">
+    
+        <input type="submit" value="Submit">
+    </form>
+
 </body>
 
 </html>
