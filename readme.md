@@ -9,7 +9,7 @@ Dit is een proof of concept voor een bagageafhandelingssysteem (en vooral het be
 
 ## architectuur
 De architectuur van het systeem is als volgt:
-![architectuur](img/c4-bagageafhandeling.svg)
+![architectuur](DocumentatieResources/c4-bagageafhandeling.svg)
 
 **De rode objecten vallen buiten de scope**. Want die zijn te groot om te implementeren in deze POC. Dus die worden gesimuleerd, hardcoded of weggelaten.
 
@@ -41,12 +41,19 @@ Dit is een simpele react app die de status en locatie bagage weergeeft. Het gebr
 - [ ] Rate limiting
 - [ ] separatie door firewalls (netwerk tekening maken en uitleggen)
 
-maybe:
+
+Misschien toevoegen:
 - [ ] Authenticatie?
 - [ ] load balancing?
+#### Bagage Inlever Systeem
+- [ ] Rate limiting
 
-### SQL injection
+
+### SQL injection (Bagage Tracking Systeem)
 > TODO: uitleggen
+
+### Rate limiting
+> TODO: uitleggen en implementeren
 
 
 
