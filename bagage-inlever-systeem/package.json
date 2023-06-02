@@ -1,0 +1,17 @@
+{
+  "name": "bagage-inlever-systeem",
+  "version": "1.0.0",
+  "description": "frontend/api die de bagage info naar het trackingssysteem stuurt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Dasani",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "hbs": "^4.2.0"
+  }
+}

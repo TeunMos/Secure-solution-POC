@@ -38,9 +38,13 @@ Dit is een simpele react app die de status en locatie bagage weergeeft. Het gebr
 ### Gebruikte technieken:
 #### Bagage Tracking Systeem
 - [X] Prepared statements tegen SQL injection
+- [ ] Rate limiting
+- [ ] separatie door firewalls (netwerk tekening maken en uitleggen)
 
-TODO:
+
+
+maybe:
 - [ ] Authenticatie?
-- [ ] Load balancing?
+- [ ] load balancing?
 
 
