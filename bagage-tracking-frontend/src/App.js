@@ -30,7 +30,7 @@ function App() {
     });
 
     socket.on("luggageAdded", (data) => {
-      setLuggageList([...luggageList, data]);
+      setLuggageList((prevLuggageList) => [...prevLuggageList, data]);
     });
 
     socket.on("luggageUpdated", (data) => {
