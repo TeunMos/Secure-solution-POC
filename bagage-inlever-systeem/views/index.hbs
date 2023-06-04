@@ -14,13 +14,16 @@
 
 
     <form action="/add-bagage" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" placeholder="Your name" required>
+        <label for="owner">Name:</label>
+        <input type="text" name="owner" id="owner" placeholder="Your name" required>
 
-        <label for="flight">Flight:</label>
-        <input type="text" name="flight" id="flight" placeholder="Flight number" required>
+        <label for="weight">weight:</label>
+        <input type="number" name="weight" id="weight" placeholder="Weight in kg" required>
+
+        <label for="destinationGate">Destination Gate:</label>
+        <input type="text" name="destinationGate" id="destinationGate" placeholder="Destination Gate" required>
                     
-        <input type="hidden" name="desk" value="{{desk}}">
+        <input type="hidden" name="CheckInDesk" value="{{desk}}">
     
         <input type="submit" value="Submit">
     </form>

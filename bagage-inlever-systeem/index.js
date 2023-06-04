@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid');
 
 // Set url for bagage-tracking-systeem
-const bagageURL = '';
+const bagageURL = 'http://127.0.0.1:3000/addLuggage';
 
 app.set('view engine', 'hbs'); // Set view engine
 app.use(express.static('public')); // Set static folder
@@ -30,25 +30,33 @@ app.post('/add-bagage', (req, res) => {
     // generate id
     const id = uuidv4();
 
-    const bagage = {
-        id : id,
-        owner : req.body.name,
-        CheckInDesk : req.body.desk,
-        flightNumber : req.body.flight
-    };
-    axios.post(bagageURL, {
-        bagage : bagage
-    }).then((response) => {
-        console.log(response);
-        res.redirect('/?desk=' + req.body.desk + '&success=true');
+    const data = new FormData();
+
+    // Add data to formdata
+    data.append('id', id);
+    data.append('owner', req.body.owner);
+    data.append('weight', req.body.weight);
+    data.append('CheckInTime', new Date().toISOString().slice(0, 19).replace('T', ' '));
+    data.append('CheckInDesk', req.body.CheckInDesk);
+
+    // flightnumber : req.body.flightnumber.toLowerCase(),
+    // If the passengerinformationDB was not out of scope these values would be accuired from the database with the flightnumber
+    data.append('destinationGate', req.body.destinationGate);
+
+    console.log(data);
+
+    
+    axios.post(bagageURL, data).then((response) => {
+        res.redirect('/?desk=' + req.body.CheckInDesk + '&success=true');
     }).catch((error) => {
-        console.log(error);
+        // console.log(error.Data);
+        console.log(error.response.data);
         res.status(500).send('Er is iets misgegaan');
     });
 });
 
 
 // Start server
-app.listen(3000, () => {
-  console.log('http://localhost:3000');
+app.listen(3005, () => {
+  console.log('http://localhost:3005');
 });

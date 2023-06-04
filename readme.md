@@ -19,7 +19,6 @@ De architectuur van het systeem is als volgt:
 
 > [/bagage-tracking-systeem](/bagage-tracking-systeem)
 
-
 Dit is een simpele python (flask) api die de bagage bijhoudt. De bagage wordt nu opgeslagen in een sqlite database (moet aparte database server worden). het gebruikt websockets om veranderingen in de database door te geven aan de clients/front-end.
 
 ### Bagage Tracking Systeem Front-end (React)
@@ -40,7 +39,6 @@ Het stuurt een post request naar het Bagage Tracking Systeem om de bagage toe te
 
 > **TODO**
 
-
 ## netwerk tekening
 
 ![netwerk tekening](DocumentatieResources/netwerk-bagageafhandeling.png)
@@ -50,8 +48,6 @@ Het stuurt een post request naar het Bagage Tracking Systeem om de bagage toe te
 Deze tekening is een simpele weergave van het netwerk. (zonder de passagiersinfo want die valt buiten de scope van deze POC)
 
 Het bagage inlever systeem heeft een connectie met de Check-in desks dus daar moet een rule voor komen in de firewall.
-
-
 
 ## Beveilingsmaatregelen lijst
 
@@ -69,9 +65,9 @@ Het bagage inlever systeem heeft een connectie met de Check-in desks dus daar mo
 
 > [/bagage-inlever-systeem](/bagage-inlever-systeem)
 
->TODO:
+> TODO:
 >
->Rate limiting per incheck-balie (tegen brute force attacks)
+> Rate limiting per incheck-balie (tegen brute force attacks)
 
 ## Beveilingsmaatregelen uitleg
 

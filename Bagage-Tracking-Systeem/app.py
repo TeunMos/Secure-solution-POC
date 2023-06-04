@@ -23,10 +23,11 @@ def addLuggage():
     weight = request.form['weight']
     CheckInTime = request.form['CheckInTime']
     CheckInDesk = request.form['CheckInDesk']
-    destination = request.form['destination']
+    destinationGate = request.form['destinationGate']
+    
     location = request.form['CheckInDesk']
 
-    luggage = luggageModel(id, owner, weight, CheckInTime, CheckInDesk, destination, location)
+    luggage = luggageModel(id, owner, weight, CheckInTime, CheckInDesk, destinationGate, location)
 
     luggageLogic.addLuggage(luggage)
     

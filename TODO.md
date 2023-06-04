@@ -6,7 +6,6 @@
 - [ ] Veiligheidscontrole systeem maken
 - [ ] De omgeving opzetten in de Vcenter met de juiste netwerk configuratie (zie netwerk tekening)
 
-
 ## Beveiligingsmaatregelen
 
 - [ ] Rate limiting per incheck-balie (tegen brute force attacks)
