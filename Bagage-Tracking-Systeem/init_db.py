@@ -8,6 +8,10 @@ password = os.getenv('DB_PASSWORD')
 host = os.getenv('DB_HOST')
 database = 'bagage_tracking_systeem'
 
+
+if username is None or password is None or host is None:
+        raise Exception('Please set the environment variables for the database connection')
+
 print(username, password, host)
 
 if __name__ == '__main__':
