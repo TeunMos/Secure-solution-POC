@@ -11,7 +11,7 @@ It is a simple implementation of a baggage handling system with a baggage tracki
 ## Architecture
 
 The architecture of the system is as follows:
-![architecture](DocumentatieResources/c4-bagageafhandeling.svg)
+![architecture](DocumentatieResources/c4-architecture.svg)
 
 **The red objects are outside the scope** because they are too large to be implemented in this POC. Therefore, they will be simulated, hardcoded, or omitted.
 
