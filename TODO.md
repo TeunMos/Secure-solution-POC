@@ -9,4 +9,4 @@
 ## Beveiligingsmaatregelen
 
 - [ ] Rate limiting per incheck-balie (tegen brute force attacks)
-- [ ] Backups maken van de database (tegen ransomware attacks)
+- [ ] Automatisch backups maken van de database (tegen ransomware attacks)

@@ -1,5 +1,8 @@
 # Secure-solution bagageafhandelingsysteem POC
 
+> See  [readme-english.md](/readme-english.md) for the english version of this readme.
+
+
 **Zie [TODO.md](/TODO.md) voor de lijst met dingen die nog gedaan moeten worden.**
 
 ## Inleiding
@@ -71,10 +74,5 @@ Het bagage inlever systeem heeft een connectie met de Check-in desks dus daar mo
 
 ## Beveilingsmaatregelen uitleg
 
-### SQL injection (Bagage Tracking Systeem)
+> TODO: uitleggen per maatregel die we hebben genomen (en waarom)
 
-> TODO: uitleggen
-
-### Rate limiting
-
-> TODO: uitleggen en implementeren
