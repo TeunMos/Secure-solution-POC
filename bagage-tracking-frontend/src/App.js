@@ -61,6 +61,8 @@ function App() {
           <tr>
             <th>tag</th>
             <th>location</th>
+            <th>owner</th>
+            <th>Destination gate</th>
           </tr>
         </thead>
         <tbody>
@@ -68,6 +70,8 @@ function App() {
             <tr key={luggage.id}>
               <td>{luggage.id}</td>
               <td>{luggage.location}</td>
+              <td>{luggage.owner}</td>
+              <td>{luggage.destination}</td>
             </tr>
           ))}
         </tbody>

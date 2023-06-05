@@ -21,7 +21,7 @@ def addLuggage():
     id = request.form['id']
     owner = request.form['owner']
     weight = request.form['weight']
-    CheckInTime = request.form['CheckInTime']
+    CheckInTime = request.form['CheckInTime']   
     CheckInDesk = request.form['CheckInDesk']
     destinationGate = request.form['destinationGate']
     
@@ -49,14 +49,8 @@ def getLuggage():
     luggageList = []
     for item in luggage:
         luggageList.append(item.__dict__)
+        
     socketio.emit('allLuggage', luggageList, namespace='/')
-    
-    gates = luggageLogic.getGates()
-    gateList = []
-    for item in gates:
-        gateList.append(item[1])
-
-    socketio.emit('allGates', gateList, namespace='/')
 
 
 

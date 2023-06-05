@@ -1,78 +1,75 @@
-# Secure-solution bagageafhandelingsysteem POC
+# Secure-solution baggage handling system POC
 
-> See  [readme-english.md](/readme-english.md) for the english version of this readme.
+**See [TODO.md](/TODO.md) for the list of things that still need to be done.**
 
+## Introduction
 
-**Zie [TODO.md](/TODO.md) voor de lijst met dingen die nog gedaan moeten worden.**
+This is a proof of concept for a baggage handling system (with a focus on securing it) for the secure-solution.
 
-## Inleiding
+It is a simple implementation of a baggage handling system with a baggage tracking system and a baggage check-in system.
 
-Dit is een proof of concept voor een bagageafhandelingssysteem (en vooral het beveligen ervan) voor de secure-solution.
+## Architecture
 
-Het is een simpele implementatie van een bagageafhandelingssysteem met een bagage tracking systeem en een bagage inlever systeem.
+The architecture of the system is as follows:
+![architecture](DocumentatieResources/c4-bagageafhandeling.svg)
 
-## architectuur
+**The red objects are outside the scope** because they are too large to be implemented in this POC. Therefore, they will be simulated, hardcoded, or omitted.
 
-De architectuur van het systeem is als volgt:
-![architectuur](DocumentatieResources/c4-bagageafhandeling.svg)
-
-**De rode objecten vallen buiten de scope**. Want die zijn te groot om te implementeren in deze POC. Dus die worden gesimuleerd, hardcoded of weggelaten.
-
-### Bagage Tracking Systeem (Python, Flask)
+### Baggage Tracking System (Python, Flask)
 
 > [/bagage-tracking-systeem](/bagage-tracking-systeem)
 
-Dit is een simpele python (flask) api die de bagage bijhoudt. De bagage wordt nu opgeslagen in een sqlite database (moet aparte database server worden). het gebruikt websockets om veranderingen in de database door te geven aan de clients/front-end.
+This is a simple Python (Flask) API that tracks the baggage. The baggage is currently stored in a MySQL server. It uses websockets to communicate changes in the database to the clients/front-end.
 
-### Bagage Tracking Systeem Front-end (React)
+### Baggage Tracking System Front-end (React)
 
 > [/bagage-tracking-frontend](/bagage-tracking-frontend)
 
-Dit is een simpele react app die de status en locatie bagage weergeeft. Het gebruikt websockets om veranderingen in de database door te krijgen van de server.
+This is a simple React app that displays the status and location of the baggage. It uses websockets to receive changes in the database from the server.
 
-### Bagage Inlever Systeem (Express, Node.js)
+### Baggage Check-in System (Express, Node.js)
 
 > [/bagage-inlever-systeem](/bagage-inlever-systeem)
 
-Dit is een API met simpele front-end dat bagage aanneemt van passagiers en deze in het Bagage Tracking Systeem zet.
+This is an API with a simple front-end that accepts baggage from passengers and puts it into the Baggage Tracking System.
 
-Het stuurt een post request naar het Bagage Tracking Systeem om de bagage toe te voegen.
+It sends a POST request to the Baggage Tracking System to add the baggage.
 
-### Veiligheidscontrole Systeem
+### Security Control System
 
 > **TODO**
 
-## netwerk tekening
+## Network Diagram
 
-![netwerk tekening](DocumentatieResources/netwerk-bagageafhandeling.png)
+![network diagram](DocumentatieResources/netwerk-bagageafhandeling.png)
 
-> **De oranje objecten** (Check-in desk, sensors/motors) zijn objecten die waarschijnlijk in een echt systeem vaker voor zullen komen. Omdat er meerdere check-in desks zijn en meerdere sensors/motors.
+> **The orange objects** (Check-in desk, sensors/motors) are objects that are likely to appear more frequently in a real system. There are multiple check-in desks and multiple sensors/motors.
 
-Deze tekening is een simpele weergave van het netwerk. (zonder de passagiersinfo want die valt buiten de scope van deze POC)
+This diagram is a simplified representation of the network (excluding passenger information, as it is outside the scope of this POC).
 
-Het bagage inlever systeem heeft een connectie met de Check-in desks dus daar moet een rule voor komen in de firewall.
+The Baggage Check-in System has a connection with the Check-in desks, so a firewall rule needs to be set up for that.
 
-## Beveilingsmaatregelen lijst
+## Security Measures List
 
-### Algemeen
+### General
 
-- separatie door firewalls (zie netwerk tekening)
+- Separation by firewalls (see network diagram)
 
-### Bagage Tracking Systeem/front-end
+### Baggage Tracking System/Front-end
 
 > [/bagage-tracking-systeem](/bagage-tracking-systeem), [/bagage-tracking-frontend](/bagage-tracking-frontend)
 
-- Prepared statements (tegen SQL injection)
+- Prepared statements (against SQL injection)
 
-### Bagage Inlever Systeem
+### Baggage Check-in System
 
 > [/bagage-inlever-systeem](/bagage-inlever-systeem)
 
 > TODO:
 >
-> Rate limiting per incheck-balie (tegen brute force attacks)
+> Rate limiting per check-in desk (against brute force attacks)
 
-## Beveilingsmaatregelen uitleg
+## Explanation of Security Measures
 
-> TODO: uitleggen per maatregel die we hebben genomen (en waarom)
+> TODO: Explain each measure we have taken (and why)
 

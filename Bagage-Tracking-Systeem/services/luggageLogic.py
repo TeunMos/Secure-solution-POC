@@ -3,11 +3,18 @@ from flask_socketio import emit as wsEmit
 
 from services.luggageDB import luggageDB as _luggageDB
 from models.luggage import luggage as luggageModel
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class luggageLogic:
     def __init__(self) -> None:
-        self.luggageDB = _luggageDB()
+        self.luggageDB = _luggageDB(
+            os.getenv('DB_USERNAME'),
+            os.getenv('DB_PASSWORD'),
+            os.getenv('DB_HOST')
+        )
 
     def getAllLuggage(self):
         return self.luggageDB.getAllLuggage()

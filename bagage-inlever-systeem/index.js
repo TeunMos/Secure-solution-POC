@@ -4,6 +4,7 @@ const app = express();
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid');
+const FormData = require('form-data');
 
 // Set url for bagage-tracking-systeem
 const bagageURL = 'http://127.0.0.1:3000/addLuggage';

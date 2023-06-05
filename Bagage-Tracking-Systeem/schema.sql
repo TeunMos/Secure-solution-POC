@@ -9,30 +9,8 @@ CREATE TABLE IF NOT EXISTS luggage (
     destination_gate VARCHAR(255),
 
     location VARCHAR(255),
-    last_moved DATETIME DEFAULT CURRENT_DATE,
+    last_moved DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (id)
 
 );
-
-
-
-CREATE TABLE IF NOT EXISTS gates (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    location VARCHAR(255) NOT NULL
-);
-
-INSERT INTO gates (location)
-    SELECT 'gate A' 
-    UNION SELECT 'gate B' 
-    UNION SELECT 'gate C'
-    UNION SELECT 'gate D' 
-    UNION SELECT 'gate E' 
-    UNION SELECT 'gate F'
-    WHERE NOT EXISTS (SELECT 1 FROM gates);
-
-
-
-
-
-

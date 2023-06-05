@@ -1,4 +1,4 @@
-# TODO (waarschijnijk incompleet)
+# TODO (incompleet)
 
 ## Features
 
