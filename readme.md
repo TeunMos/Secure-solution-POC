@@ -72,4 +72,3 @@ The Baggage Check-in System has a connection with the Check-in desks, so a firew
 ## Explanation of Security Measures
 
 > TODO: Explain each measure we have taken (and why)
-

@@ -26,8 +26,13 @@
         <input type="hidden" name="CheckInDesk" value="{{desk}}">
     
         <input type="submit" value="Submit">
+        
     </form>
-
+    
+    {{!-- if succesful --}}
+    {{#if succes}}
+        <p class="succes">Bagage is succesfully added!</p>
+    {{/if}}
 </body>
 
 </html>

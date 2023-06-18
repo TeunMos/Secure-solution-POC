@@ -17,6 +17,16 @@ app.get('/', (req, res) => {
     if (req.query.desk != null && req.query.desk != undefined && req.query.desk != '')
     {
         const desk = req.query.desk; // Get desk from query (url/?desk=XXX)
+
+        // is succesfull
+        if (req.query.success != null && req.query.success != undefined && req.query.success != '')
+        {
+            res.render('index', {
+                desk: desk,
+                success: true
+            });
+            return;
+        }
         res.render('index', {
             desk: desk
         });
@@ -43,7 +53,7 @@ app.post('/add-bagage', (req, res) => {
     // flightnumber : req.body.flightnumber.toLowerCase(),
     // If the passengerinformationDB was not out of scope these values would be accuired from the database with the flightnumber
     data.append('destinationGate', req.body.destinationGate);
-
+    
     console.log(data);
 
     
